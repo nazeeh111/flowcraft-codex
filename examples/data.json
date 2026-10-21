@@ -1,0 +1,6 @@
+{
+  "kind": "synthetic validation data, not research results",
+  "x_unit": "samples",
+  "y_unit": "milliseconds",
+  "points": [[1, 12], [2, 18], [3, 15], [4, 24]]
+}

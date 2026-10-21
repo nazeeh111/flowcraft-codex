@@ -1,0 +1,13 @@
+# Revisions, semantic structure and reconstruction
+
+For multi-turn work keep a compact ledger beside the figure: source/version, communicative intent, current requirements, accepted visual choices, superseded requirements, latest accepted source/render and unresolved issues. Keep the original source facts distinct from user-editable styling decisions. Add new feedback without dropping earlier requests; when a request conflicts with a prior decision, record which decision it supersedes.
+
+For complex figures, split composition into panels and semantic groups with stable SVG IDs such as `panel-training`, `module-encoder`, `edge-encoder-pool`, `label-input`. Give groups meaningful title/description text. Associate diagram relationships with source passages in a short brief. A structured nodes/edges/groups file is useful for graph-like figures, but do not force every scientific illustration into a graph or generate redundant intermediate files for a small figure.
+
+Localize fixes to the relevant group or path, then inspect the entire composition at final size. For each revision ask: does it satisfy the latest request; preserve prior accepted requests; remain scientifically faithful; and improve or preserve visual presentation? Keep the prior accepted version until all four questions are resolved. A prettier image with an omitted data path is a regression. Do not promote candidates solely from an arbitrary self-score.
+
+When reconstructing a supplied raster, inspect visible labels, symbols, arrow endpoints, groups and layer order first. Unknown or illegible scientific content remains unknown; do not confidently invent it. Rebuild text, arrows and standard shapes as real objects. Use licensed or user-supplied bitmap crops for pictorial details only when suitable, and label the result hybrid. For true object editing, a raster fragment or auto-traced silhouette is not equivalent to a semantic vector component.
+
+For mathematical or specialized figures, use a format that preserves their notation and geometry, such as TikZ when compilation is available. For PPTX/draw.io requests use the existing artifact workflow or a real format writer; renaming an SVG is not an export. Confirm that the requested program can reopen the file when that compatibility is material.
+
+Match review depth to the figure. Check a two-column paper figure at its actual placed width and with a grayscale preview when color carries meaning. Check complex labels or formulas individually. Retrieving an example gives no automatic permission to redistribute its artwork or icons; retain sources and applicable licenses for included assets.

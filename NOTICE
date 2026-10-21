@@ -1,0 +1,12 @@
+PaperBanana for Codex
+
+Independent Codex-native workflow inspired by PaperBanana / PaperVizAgent.
+Upstream source files inspected carry Copyright 2026 Google LLC and the
+Apache License, Version 2.0. The upstream license is retained in LICENSE.
+
+This package rewrites the workflow and supplies original local rendering,
+validation, export, installation and test helpers. It does not contain
+upstream model inference code, model weights or benchmark figures.
+
+Additional public works informing design choices are attributed in
+docs/comparison.md. No implementation code from those projects is included.

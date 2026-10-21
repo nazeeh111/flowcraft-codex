@@ -1,0 +1,6 @@
+interface:
+  display_name: "PaperBanana Scientific Figures"
+  short_description: "Create and refine faithful, editable paper figures"
+  default_prompt: "Use $paperbanana to turn my methods and caption into a faithful, editable scientific figure, then render and inspect it."
+policy:
+  allow_implicit_invocation: true
