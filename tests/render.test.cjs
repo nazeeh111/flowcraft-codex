@@ -9,7 +9,7 @@ const {inspect,dependency} = require('../scripts/svg.cjs');
 const scripts = path.join(__dirname,'../scripts');
 const wrap = b => `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100">${b}</svg>`;
 function fixture(t,source) {
- const dir=fs.mkdtempSync(path.join(os.tmpdir(),'paperbanana-test-'));
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'flowcraft-test-'));
  t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
  const input=path.join(dir,'input.svg'); fs.writeFileSync(input,source);
  return {dir,input};

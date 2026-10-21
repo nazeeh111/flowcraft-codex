@@ -5,8 +5,8 @@
     "sharp": "0.35.5",
     "svg-to-pdfkit": "0.1.8"
   },
-  "name": "paperbanana-codex",
-  "version": "1.0.0",
+  "name": "flowcraft-codex",
+  "version": "2.0.0",
   "private": true,
   "description": "Codex-native scientific figures with editable SVG, local PNG/PDF export and visual revision guidance.",
   "license": "Apache-2.0",
@@ -14,11 +14,11 @@
     "node": ">=20.9"
   },
   "scripts": {
-    "test": "node --test tests/*.test.cjs",
+    "test": "node --test tests/*.test.cjs && python3 -m unittest discover -s tests -p \"*_test.py\"",
     "examples": "node examples/generate.cjs"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nazeeh111/paperbanana-codex.git"
+    "url": "https://github.com/nazeeh111/flowcraft-codex.git"
   }
 }

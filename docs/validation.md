@@ -27,3 +27,11 @@ For new work, inspect fresh PNGs for label readability, clipping and connection 
 The SVG structural audit does not measure all overlaps, clipping, glyph coverage, accessibility or semantic correctness. It is not an untrusted-content sanitizer. PDF export supports a basic SVG subset and font substitution can change text; unsupported features require another verified exporter. Automated overlap correction, OCR, model segmentation, full raster vectorization, arbitrary PPTX/draw.io conversion and local image-model inference are not bundled. The skill routes to suitable existing capabilities when they are actually available, and reports missing capabilities honestly.
 
 No held-out model evaluation was run. No guarantee of perfect figures, universal editability, publication acceptance or quality superiority is made. Meaningful quality claims require inspecting actual content and measuring the relevant outcome.
+
+## Flowcraft v2.0.0
+
+The renamed package adds three installer tests to the 20 renderer checks. The new tests reproduce a macOS parent-path alias issue (`/var` versus `/private/var`) in source-nesting checks; normalizing the destination after refusing destination symlinks fixes it. Installer tests cover copying runtime material, excluding checkout files, refusing existing work/symlinks, source nesting and missing dependencies. `CODEX_HOME` is honored for the default installation root.
+
+A fresh independent behavioral check used the Flowcraft skill to create a sensor-validation decision diagram and then revise it to monochrome. Both PNGs were opened. All seven required relationships, text, IDs, element structure and non-fill attributes were retained across the revision. The monochrome result is included in examples/rendered/decision-flow.svg and .png. No numeric threshold was invented. This bounded task supports the observed revision behavior; it does not establish general or future-model superiority.
+
+The entrypoint now routes export-specific details to a conditional reference, uses capability-based tool selection, and avoids named model roles, forced agent counts, fixed refinement rounds and self-scoring thresholds. These design choices improve adaptability; future tool/runtime changes still require compatibility checks.

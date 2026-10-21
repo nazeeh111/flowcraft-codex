@@ -4,7 +4,7 @@ const os = require('node:os');
 const path = require('node:path');
 const {spawnSync} = require('node:child_process');
 const data = require('./data.json');
-const out = process.argv[2] ? path.resolve(process.argv[2]) : fs.mkdtempSync(path.join(os.tmpdir(), 'paperbanana-examples-'));
+const out = process.argv[2] ? path.resolve(process.argv[2]) : fs.mkdtempSync(path.join(os.tmpdir(), 'flowcraft-examples-'));
 fs.mkdirSync(out, {recursive: true});
 function text(x,y,s,size=20) {return `<text x="${x}" y="${y}" text-anchor="middle" font-family="Helvetica" font-size="${size}" fill="#17212e">${s}</text>`;}
 function wrap(body,w,h) {return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><title>Scientific figure demonstration</title><rect width="100%" height="100%" fill="white"/>${body}</svg>`;}

@@ -1,53 +1,37 @@
 ---
-name: paperbanana
-description: Create and refine academic method diagrams, scientific illustrations and data-driven paper figures using PaperBanana's reference-guided planning and visual critique. Use for publication figures, architecture figures in research papers, graphical abstracts or an explicit PaperBanana request. Routine app UI, general software architecture diagrams and animations use their own workflows.
+name: flowcraft
+description: Create and refine editable flowcharts, research method diagrams, scientific illustrations and data-driven figures from source material. Use for process explanations, paper figures, graphical abstracts or an explicit Flowcraft request. General app UI, animated explainers and routine cloud infrastructure diagrams use their specialized workflows.
 license: Apache-2.0
 ---
 
-# PaperBanana for Codex
+# Flowcraft
 
-Turn scientific content and a figure's intended message into a faithful, legible figure, then inspect the rendered result. This is a Codex-native adaptation of PaperBanana, not its API pipeline or a reproduction of its benchmark results. See [provenance](references/upstream.md) for inspected source and changes.
+Make the idea clear, preserve its meaning, and deliver editable sources plus a checked render. Use reference-guided composition and targeted visual revision. [Provenance](references/upstream.md) records the research foundations; this skill does not run or reproduce those systems' model pipelines.
 
-Use current Codex reasoning and available subscription tools. No provider keys, API wrappers, background service or upstream environment are needed. Do not run upstream `skill/run.py` or install its requirements for this workflow.
+## Adapt to the task and available capabilities
 
-## Choose the output
+Use the user's selected model and effort. Choose tools from what the current session actually exposes; do not assume a named model, provider, image tool, subagent system or desktop-only helper exists. There are no fixed model roles or API credentials. Existing subscription tools and free local software are the intended route.
 
-- For exact labels, module relationships and editable paper diagrams, author SVG or another appropriate editable vector format. Use the local renderer below for a PNG preview.
-- Call an output **vector** when its visual objects are vectors and text, **hybrid** when editable objects include embedded raster illustrations, and **raster** when it is a pixel image. Wrapping a PNG in SVG does not make its contents editable. For complex figures, use stable IDs for panels, modules, labels and connections, and meaningful `<title>`/`<desc>` elements; read [revision guidance](references/revisions.md) for multi-turn edits, raster reconstruction and local repairs.
-- For quantitative figures, read [plot guidance](references/plots.md). Generate marks from actual data using code, preserving values, units and transformations. A simple plot can use SVG; use an available plotting library for complex statistics.
-- For pictorial scientific illustrations that benefit from generated pixels, use an available subscription image tool and its imagegen skill. Keep exact labels and quantitative overlays editable where feasible. If unavailable, use a suitable vector illustration or explain the limitation; do not switch to billed APIs.
-- Preserve the requested medium and existing source when refining a figure. Use other available document, slide, 3D or animation workflows only when the deliverable requires them.
+For a small figure, work directly. Add references, alternate compositions, structured intermediate data or independent review only when they can improve a material decision. Passes may be combined, skipped when unnecessary or revisited when a defect requires it. Do not spend extra calls merely to fill a pipeline. For unfamiliar complex work, check the available capability before choosing it. Report missing image inspection/export support without claiming the result was checked. Do not automatically change the selected model or switch to a billed service.
 
-## Reference, plan, style, render, critique
+## Choose the representation
 
-These are reasoning passes, not a requirement to launch five agents. Combine them for simple work. Start with one candidate; explore alternatives only when composition is genuinely uncertain or the user requests them.
+- **Editable diagrams:** SVG or another appropriate vector source. Give substantial figures stable IDs for panels, modules, labels and directed connections. Meaningful `<title>` and `<desc>` elements help later edits. See [revisions](references/revisions.md) for complex or multi-turn work.
+- **Quantitative figures:** code driven by actual data, units and transformations; read [plot guidance](references/plots.md). Use an available plotting library when needed, or SVG for a simple chart. Never use an image model to invent numerical marks.
+- **Pictorial illustrations:** an available subscription image tool can help; follow its actual tool/skill instructions. Keep exact labels and data overlays editable where feasible. Preserve the user's requested medium and sources.
 
-1. **Ground the figure.** Read the provided methods, caption, data and existing image. Identify the main claim, required entities, directed relationships, training versus inference, known quantities, and unknowns. Ask only when missing information changes scientific meaning. Mark illustrative assumptions; never invent results or modules. Choose a sensible size if unspecified.
-2. **Retrieve useful references.** Inspect supplied references first. When useful, find a small number of structurally relevant figures from primary papers or the user's collection and inspect the actual figures. Extract layout, grouping and visual conventions, not scientific claims. Record sources briefly. If references are unavailable, state that and proceed from source content; do not claim benchmark retrieval occurred. Do not download a benchmark by default.
-3. **Plan the visual argument.** Map source facts to nodes, edges, panels and labels. Choose a pipeline, loop, layered architecture or other composition suited to the method. Separate training-only elements from inference and label feedback paths. Put the caption outside the artwork unless requested inside. For substantial figures, save a compact source-to-element map and design brief beside the source; do not create paperwork for trivial figures.
-4. **Apply a consistent style.** Follow supplied venue/template requirements. Otherwise use a white background, dark readable type, restrained semantic colors, consistent strokes and intentional whitespace. Use short labels and visual grouping. Keep necessary legends. Check readability at the intended physical size; distinguish categories through labels or shapes as well as color. Treat upstream's conference-specific aesthetics as examples, not universal rules.
-5. **Render and critique the pixels.** Open the fresh render and compare it with the original source and caption. Check scientific fidelity first, then text and arrow directions, scope, clipping, overlaps, contrast, legibility and unnecessary detail. For plots, verify numeric values separately from appearance. Fix concrete defects and render again. Usually one or two targeted passes suffice; stop when requirements are met or further attempts stop improving evidence. Preserve the last valid version until its replacement succeeds. A successful render is not a scientific or visual QA pass.
+Call output **vector** when it consists of vector objects/text, **hybrid** when editable objects contain raster illustrations, and **raster** when it is a pixel image. A bitmap inside SVG is not object-editable artwork. Use the actual requested writer/exporter for PPTX, draw.io, TeX or other formats; renaming a file is not conversion.
 
-For revisions, preserve scientific content, panel identity and previously accepted changes unless the user supersedes them. Keep a compact requirements ledger for multi-turn work, recording current and superseded decisions. Compare each new render against the source, accumulated requirements and last accepted figure. Review the whole figure after a local edit, since moving one label can obstruct another connection. See [revision guidance](references/revisions.md).
+## Build and verify
 
-## Local SVG rendering
+1. **Ground the content.** Read the source, caption, data and supplied figure. Identify the intended message, required entities and relationships, branching/feedback and known versus unknown facts. Distinguish training from inference when relevant. Ask only when ambiguity changes meaning. Mark illustrative assumptions; never invent results or missing scientific relationships.
+2. **Compose the argument.** Inspect supplied references first; retrieve primary examples only when they help a real layout or convention decision. Extract visual organization, not scientific claims or unlicensed artwork. Choose a composition suited to the content. Keep captions outside artwork unless requested inside. For substantial figures, keep a compact source-to-element map beside the editable master.
+3. **Make it legible.** Follow the user's template or venue. Otherwise use restrained semantic color, readable type, consistent strokes and clear grouping. Labels/shapes should reinforce color distinctions. Use concise labels and necessary legends; optimize at actual placed size rather than only a zoomed preview.
+4. **Inspect the actual result.** Render the current source, open the fresh output and compare it with source facts and requirements. Prioritize fidelity, complete arrow paths, data accuracy and text before aesthetic polish. Check clipping, overlap, contrast, fonts and final-size readability. Numeric checks and visual inspection serve different purposes; neither replaces the other. Inspect exported PDFs separately when requested.
+5. **Refine concrete defects.** Repair the relevant components and recheck the whole figure. Keep accepted decisions across turns and record superseded requirements in a compact ledger for multi-turn work. Compare with the last accepted version; preserve it until the replacement passes. Stop when requirements are met or further attempts add no useful evidence, not at a fixed self-score or arbitrary number of rounds.
 
-Run from any working directory, replacing `SKILL_DIR` with this skill's actual absolute path:
+## Export and handoff
 
-```sh
-node SKILL_DIR/scripts/render_svg.cjs figure.svg figure-preview.png --width 1800
-```
+For bundled local SVG audit, PNG rendering and basic vector PDF export, read [export tools](references/exports.md). These tools are optional implementation aids; a better available renderer is acceptable if its actual output is verified. SVG remains the editable master. A successful structural check is not evidence of correct science, valid glyphs or a good layout.
 
-The helpers use pinned free dependencies from this skill's `package-lock.json`. If dependencies are missing, run `npm ci` in this skill directory, or use an already available suitable renderer. They make no model calls. They reject active/external resources, broken local references and duplicate IDs, and refuse to replace an output. PNG dimensions are bounded. These are structural checks, not an untrusted-input sandbox or a visual correctness verdict. Choose a new versioned name. If Node is absent from PATH, use the Node executable returned by `load_workspace_dependencies`. Do not modify a shared runtime.
-
-SVG remains the editable master. For a vector PDF of basic SVG, run:
-
-```sh
-node SKILL_DIR/scripts/export_pdf.cjs figure.svg figure.pdf --width-mm 178
-```
-
-The PDF exporter fails on reported unsupported content rather than flattening it to an image; filters, masks, patterns and style sheets need another exporter or simpler inline SVG. Font substitution can differ, especially for mathematics and non-Latin text. Inspect the actual PDF and compare labels, markers and clipping with the SVG/PNG. Do not claim a hybrid source becomes pure vector through PDF export. Size raster exports for actual placement: pixels = width in mm / 25.4 × required DPI. Verify venue requirements rather than imposing 178 mm universally.
-
-## Deliver
-
-Provide the figure, its editable source and a short caption or alt description when helpful. State what was visually inspected and any material scientific assumptions or unavailable checks. Keep provenance with supporting files rather than cluttering the artwork. Do not claim publication readiness, upstream execution or quality superiority from a single example. Publishing and submission require the user's authorization.
+Deliver the figure and editable source, plus a short caption/alt description where helpful. For plots include generating code and source data or a stable input reference. State material assumptions and unavailable checks. Avoid universal quality, future compatibility or publication-readiness claims from a narrow example. Keep license/source attribution with supporting files. Publishing or submission follows user authorization.

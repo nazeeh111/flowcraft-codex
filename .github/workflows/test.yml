@@ -22,5 +22,5 @@ jobs:
       - run: npm test
       - name: Verify installed helpers
         run: |
-          python3 scripts/install.py --dest "$RUNNER_TEMP/paperbanana-skill"
-          node "$RUNNER_TEMP/paperbanana-skill/scripts/render_svg.cjs" examples/rendered/method.svg "$RUNNER_TEMP/installed.png"
+          python3 scripts/install.py --dest "$RUNNER_TEMP/flowcraft-skill"
+          node "$RUNNER_TEMP/flowcraft-skill/scripts/render_svg.cjs" examples/rendered/method.svg "$RUNNER_TEMP/installed.png"

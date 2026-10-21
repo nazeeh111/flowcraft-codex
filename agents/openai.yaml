@@ -1,6 +1,8 @@
 interface:
-  display_name: "PaperBanana Scientific Figures"
-  short_description: "Create and refine faithful, editable paper figures"
-  default_prompt: "Use $paperbanana to turn my methods and caption into a faithful, editable scientific figure, then render and inspect it."
+  display_name: "Flowcraft"
+  icon_small: "./assets/icon.png"
+  icon_large: "./assets/icon.png"
+  short_description: "Clear diagrams, faithful figures, editable sources"
+  default_prompt: "Use $flowcraft to turn my source material into a clear, editable diagram or scientific figure, then render and inspect it."
 policy:
   allow_implicit_invocation: true
